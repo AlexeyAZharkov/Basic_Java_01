@@ -1,9 +1,13 @@
+import ru.example.MyClass;
+
 public class se {
     public static void main(String[] args) throws Exception {
         Person pt = new Person();
         pt.setAgeWeight(29, 88);
         pt.setCl(4);
         pt.setFio("dю,eff");
+        MyClass m = new MyClass();
+
 
         System.out.println("Работник " + pt.getFio() + ", возраста " + pt.getAge());
     }
