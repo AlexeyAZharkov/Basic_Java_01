@@ -7,7 +7,6 @@ public class NewClass {
     public static void main(String[] args){
         String[] romeArr = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
         int num = Arrays.asList(romeArr).indexOf("IV") + 1;
-
         String[] romeArrD = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String[] romeArrEd = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
         String res = romeArrD[4] + romeArrEd[5];
