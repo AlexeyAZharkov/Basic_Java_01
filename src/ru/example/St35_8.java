@@ -1,7 +1,5 @@
 package ru.example;
 
-import java.util.Objects;
-
 public class St35_8 {
     public static void main(String[] args) {
         byte[] example = {72, 101, 108, 108, 111, 33};
@@ -35,19 +33,22 @@ public class St35_8 {
             return sb.toString();
         }
 
-        public String charAt(int x){
-            return Character.toString((char)ar[x]) ;
+        public char charAt(int x){
+            return (char)ar[x] ;
         }
 
-        String subSequence(int start, int end){
-            StringBuffer sb = new StringBuffer();
-            for (int i = start; i <= end; i++){
-                sb.append((char)ar[i]);
+        public CharSequence subSequence(int start, int end){
+            byte[] n = new byte[end - start];
+            for(int i = 0; i < end - start; i++) {
+                n[i] = ar[i + start];
             }
-            return sb.toString();
+            return new AsciiCharSequence(n);
         }
     }
-    public interface CharSequence{
-        int length();
-    }
+//    public interface CharSequence{
+//        int length();
+//        String toString();
+//        String subSequence(int start, int end);
+//        String charAt(int x);
+//    }
 }
