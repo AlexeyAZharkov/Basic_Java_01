@@ -1,9 +1,13 @@
 package ru.example;
 
+import java.util.Arrays;
+
 public class St35_8 {
     public static void main(String[] args) {
         byte[] example = {72, 101, 108, 108, 111, 33};
+        byte bb;
         AsciiCharSequence answer = new AsciiCharSequence(example);
+//        System.out.println("args = ");
         System.out.println("Последовательность - " + answer.toString());//Hello!
         System.out.println("Размер её - " + answer.length());//6
         System.out.println("Символ под № 1 - " + answer.charAt(1));//e
@@ -17,8 +21,9 @@ public class St35_8 {
     public static class AsciiCharSequence  implements CharSequence {
         private final byte[] ar;
 
-        AsciiCharSequence(byte[] ar){
+        public AsciiCharSequence(byte[] ar){
             this.ar = ar.clone();
+            System.out.println("ar = " + this.ar);
         }
 
         public int length(){

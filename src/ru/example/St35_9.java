@@ -61,14 +61,18 @@ public class St35_9 {
             }
             numberOfTest++;
         }
-
-
     }
+
     public Label checkLabels(TextAnalyzer[] analyzers, String text) {
+        //TODO
         return Label.OK;
     }
 
-    static abstract class KeywordAnalyzer implements TextAnalyzer{
+    static abstract class KeywordAnalyzer implements TextAnalyzer {
+
+        public Label processText(String text) {
+            return Label.OK; // todo
+        }
 
         public abstract String getKeywords();
         public abstract Label getLabel();
@@ -77,7 +81,7 @@ public class St35_9 {
     static class SpamAnalyzer extends KeywordAnalyzer {
         private String[] keywords;
 
-        SpamAnalyzer(String[] arr){
+        public SpamAnalyzer(String[] arr){
             keywords = arr.clone();
         }
 
@@ -89,14 +93,13 @@ public class St35_9 {
             return null;
         }
 
-        @Override
         public Label processText(String text) {
             return null;
         }
     }
 
     static class NegativeTextAnalyzer extends KeywordAnalyzer {
-        NegativeTextAnalyzer(){}
+        public NegativeTextAnalyzer(){}
 
         public String getKeywords() {
             return null;
@@ -106,7 +109,6 @@ public class St35_9 {
             return null;
         }
 
-        @Override
         public Label processText(String text) {
             return null;
         }
@@ -114,11 +116,11 @@ public class St35_9 {
 
     static class TooLongTextAnalyzer implements TextAnalyzer {
         private int maxLength;
-        TooLongTextAnalyzer(int howLong){
+
+        public TooLongTextAnalyzer(int howLong){
             maxLength = howLong;
         }
 
-        @Override
         public Label processText(String text) {
             return null;
         }

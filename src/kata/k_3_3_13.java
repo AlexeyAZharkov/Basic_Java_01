@@ -44,21 +44,21 @@ public class k_3_3_13 {
 //        for (int i = 0; i < Math.abs(toY - Y); i++) {
 //            robot.stepForward();
 //        }
-        Direction xDir = (toX > robot.getX()) ? Direction.RIGHT : Direction.LEFT;
-        Direction yDir = (toY > robot.getY()) ? Direction.UP : Direction.DOWN;
-
-        while (robot.getDirection() != xDir) {
-            robot.turnRight();
-        }
-        while (toX != robot.getX()) {
-            robot.stepForward();
-        }
-        while (robot.getDirection() != yDir) {
-            robot.turnRight();
-        }
-        while (toY != robot.getY()) {
-            robot.stepForward();
-        }
+//        Direction xDir = (toX > robot.getX()) ? Direction.RIGHT : Direction.LEFT;
+//        Direction yDir = (toY > robot.getY()) ? Direction.UP : Direction.DOWN;
+//
+//        while (robot.getDirection() != xDir) {
+//            robot.turnRight();
+//        }
+//        while (toX != robot.getX()) {
+//            robot.stepForward();
+//        }
+//        while (robot.getDirection() != yDir) {
+//            robot.turnRight();
+//        }
+//        while (toY != robot.getY()) {
+//            robot.stepForward();
+//        }
 
 
     }
