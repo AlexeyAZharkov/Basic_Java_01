@@ -1,8 +1,6 @@
 package ru.example;
 
-import java.util.Locale;
-
-public class St35_9 {
+public class Kat3_5_7_St35_9 {
     public static void main(String[] args) {
         // инициализация анализаторов для проверки в порядке данного набора анализаторов
         String[] spamKeywords = {"spam", "bad"};
@@ -49,7 +47,7 @@ public class St35_9 {
         tests[7] = "Very bad, very neg =(, very ..................";      // SPAM or NEGATIVE_TEXT or TOO_LONG
         TextAnalyzer[][] textAnalyzers = {textAnalyzers1, textAnalyzers2, textAnalyzers3,
                 textAnalyzers4, textAnalyzers5, textAnalyzers6};
-        St35_9 testObject = new St35_9();
+        Kat3_5_7_St35_9 testObject = new Kat3_5_7_St35_9();
         int numberOfAnalyzer; // номер анализатора, указанный в идентификаторе textAnalyzers{№}
         int numberOfTest = 0; // номер теста, который соответствует индексу тестовых комментариев
         for (String test : tests) {
