@@ -6,12 +6,12 @@ public class Kat_4_2_6 {
     }
 
     public boolean getCreditForClient(BankWorker bankWorker, BankClient bankClient) {
-        try {
-            return bankWorker.checkClientForCredit(bankClient);
-        } catch (BadCreditHistoryException e) {
-            System.out.println("Проблемы с банковской историей");
-        } catch (ProblemWithLawException e) {
-        }
+//        try {
+//            return bankWorker.checkClientForCredit(bankClient);
+//        } catch (BadCreditHistoryException e) {
+//            System.out.println("Проблемы с банковской историей");
+//        } catch (ProblemWithLawException e) {
+//        }
         return false;
     }
 
@@ -29,10 +29,10 @@ public class Kat_4_2_6 {
     }
 
     class BadCreditHistoryException extends RuntimeException{
-        public BadCreditHistoryException(Stringmessage) {
-            super(message);
+//        public BadCreditHistoryException(Stringmessage) {
+//            super(message);
         }
 
     }
 
-}
+
