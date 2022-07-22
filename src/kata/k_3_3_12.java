@@ -26,9 +26,9 @@ public class k_3_3_12 {
         public Human() {}
 
         public Human(byte age, String name, String secondName, String favoriteSport) {
-            this.age = age;
-            this.name = name;
-            this.secondName = secondName;
+            this((byte) age, name, secondName);
+//            this.name = name;
+//            this.secondName = secondName;
             this.favoriteSport = favoriteSport;
         }
 
