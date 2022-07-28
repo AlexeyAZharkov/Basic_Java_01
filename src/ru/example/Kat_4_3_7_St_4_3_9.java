@@ -68,8 +68,8 @@ public class Kat_4_3_7_St_4_3_9 {
     }
 
     public static class UntrustworthyMailWorker implements MailService {
-        RealMailService realMailService = new RealMailService();
-        MailService[] mailServices;
+        private RealMailService realMailService = new RealMailService();
+        private MailService[] mailServices;
 
         public UntrustworthyMailWorker(MailService[] mailService) {
             this.mailServices = mailService;
@@ -88,7 +88,7 @@ public class Kat_4_3_7_St_4_3_9 {
     }
 
     public static class Spy implements MailService {
-        Logger logger = null;
+        private Logger logger = null;
 
         public Spy(Logger logger) {
             this.logger = logger;
@@ -109,8 +109,8 @@ public class Kat_4_3_7_St_4_3_9 {
     }
 
     public static class Thief implements MailService {
-        int allPrice = 0;
-        int minPrice;
+        private int allPrice = 0;
+        private int minPrice;
 
         public Thief(int minPrice) {
             this.minPrice = minPrice;

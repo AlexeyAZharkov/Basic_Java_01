@@ -18,5 +18,6 @@ public class k_5_3_12_st_53_13 {
 //            System.out.println(result);
         }
         System.out.printf("%.6f", result);
+//        java.io.BufferedReader(Reader r)
     }
 }

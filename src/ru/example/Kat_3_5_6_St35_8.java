@@ -6,8 +6,10 @@ public class Kat_3_5_6_St35_8 {
     public static void main(String[] args) {
         byte[] example = {72, 101, 108, 108, 111, 33};
         byte bb;
+//        int e = -1;
         AsciiCharSequence answer = new AsciiCharSequence(example);
 //        System.out.println("args = ");
+//        System.out.println("Последовательность - " + (byte) e);
         System.out.println("Последовательность - " + answer.toString());//Hello!
         System.out.println("Размер её - " + answer.length());//6
         System.out.println("Символ под № 1 - " + answer.charAt(1));//e
