@@ -11,11 +11,12 @@ public class k_5_3_12_st_53_13 {
         Double result = 0.0;
 //        Scanner in = new Scanner("1 2 3");
         while (in.hasNext()) {
-            String st = in.next();
-            try {
-                result += Double.parseDouble(st);
-            } catch (NumberFormatException e) {}
-//            System.out.println(result);
+            if (in.hasNextDouble()) {
+                result += Double.parseDouble(in.next());
+            } else {
+                in.next();
+            }
+
         }
         System.out.printf("%.6f", result);
 //        java.io.BufferedReader(Reader r)

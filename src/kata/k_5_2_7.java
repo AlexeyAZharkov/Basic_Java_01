@@ -27,3 +27,10 @@ public class k_5_2_7 {
  *  rotateLeft — циклический сдвиг бит числа на один бит влево (чтобы не изобретать велосипед,
  *  используйте Integer.rotateLeft), bn b_n bn​ — n-ный байт данных.
  */
+//boolean isFirst = true;
+//if (isFirst) {
+//        System.out.print(read);
+//        isFirst = false;
+//        } else {
+//        System.out.print(", " + read);
+//        }
