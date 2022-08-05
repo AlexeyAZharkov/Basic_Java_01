@@ -25,8 +25,12 @@ public class k_7_1_9_st_63_8 {
 
 //
 //        }
+        T t;
+        Function<T, U> Function = x -> (condition.test(x)) ? ifTrue.apply(x) : ifFalse.apply(x);
+//        return (condition.test(new T)) ? ifTrue.apply(new T) : ifFalse.apply(new T);
+        return Function;
 
-        return null;
+//        return condition.and(ifTrue.compose(ifFalse));
 
     }
 }
