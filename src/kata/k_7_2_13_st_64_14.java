@@ -84,9 +84,15 @@ public class k_7_2_13_st_64_14 {
         assert salaries.get(randomTo).equals(Arrays.asList(randomSalary)): "wrong salaries mailbox content (3)";
     }
 
-
 }
-class MailMessage {
+
+interface MService<T> {
+    String getFrom();
+    String getTo();
+    T getContent();
+}
+
+class MailMessage implements MService<String> {
     private String from;
     private String to;
     private String content;
@@ -110,7 +116,7 @@ class MailMessage {
     }
 }
 
-class Salary {
+class Salary implements MService<Integer> {
     private String from;
     private String to;
     private Integer salary;
@@ -121,28 +127,57 @@ class Salary {
         this.salary = salary;
     }
 
-    public Integer getTo() {
+    public String getTo() {
+        return to;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public final Integer getContent(){
         return salary;
     }
     // randomFrom, randomTo, randomSalary
 }
 
-class MailService <T> implements Consumer <T> {
-    Consumer <T> consumer = a -> a.hashCode();
+class MailService<T> implements Consumer<MService<T>> {
+    private Map<String, List<T>> mailBox;
 
-    <T> MailService() {}
+    public MailService() {
+        mailBox = new MailHashMap<>();
+    }
 
-    public Map getMailBox() {
-        return null ;
+    private static class MailHashMap<K,V> extends HashMap<K,V> {
+        @Override
+        public V get(Object key) {
+            V keyTest = super.get(key);
+            try {
+                if (keyTest == null) {
+                    keyTest = (V) Collections.emptyList();
+                }
+            } catch (ClassCastException e) {
+            }
+            return keyTest;
+        }
+    }
+
+    public Map<String, List<T>> getMailBox() {
+        return mailBox;
     }
 
     @Override
-    public void accept(T t) {
-
+    public void accept(MService<T> t) {
+        if (mailBox.containsKey(t.getTo())) {
+            List<T> val;
+            val = mailBox.get(t.getTo());
+            val.add(t.getContent());
+            mailBox.put(t.getTo(), val);
+        } else {
+            List<T> val;
+            val = new LinkedList<>();
+            val.add(t.getContent());
+            mailBox.put(t.getTo(), val);
+        }
     }
 }
-// Мама мыла-мыла-мыла раму!
-// Помогло использование регулярки [\\p{Blank}\\p{Punct}]+
-// "[^A-Za-z0-9А-Яа-я]"
-// яама мыла-мыла-мыла раму!
-// Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales consectetur purus at faucibus. Donec mi quam, tempor vel ipsum non, faucibus suscipit massa. Morbi lacinia velit blandit tincidunt efficitur. Vestibulum eget metus imperdiet sapien laoreet faucibus. Nunc eget vehicula mauris, ac auctor lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel odio nec mi tempor dignissim.
